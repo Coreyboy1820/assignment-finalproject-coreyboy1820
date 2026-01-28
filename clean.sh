@@ -1,2 +1,0 @@
-cd buildroot
-make distclean
