@@ -1,0 +1,1 @@
+include $(sort $(wildcard $(BR2_EXTERNAL_rpi5overlay_PATH)/package/*/*.mk))

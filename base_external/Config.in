@@ -1,0 +1,2 @@
+source "$BR2_EXTERNAL_rpi5overlay_PATH/package/rpi4KernelDriver/Config.in"
+source "$BR2_EXTERNAL_rpi5overlay_PATH/package/rpi4UserSpaceApp/Config.in"

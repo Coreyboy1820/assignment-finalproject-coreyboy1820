@@ -1,0 +1,4 @@
+config BR2_PACKAGE_RPI4USERSPACEAPP
+	bool "rpi4userspaceapp"
+	help
+        The user space application for the rpi4 final project
