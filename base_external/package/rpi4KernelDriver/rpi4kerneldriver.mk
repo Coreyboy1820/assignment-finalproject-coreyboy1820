@@ -5,22 +5,26 @@
 #
 ##############################################################
 
-RPI4KERNELDRIVER_VERSION = 712d1f06742b55ac00f4d363c30c769be2e6dd6c
+# RPI4KERNELDRIVER_VERSION = b09309fe161e614248b4f01e84d17025cf0c4b85
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
-RPI4KERNELDRIVER_SITE = git@github.com:Coreyboy1820/RPI-5-Linux-Kernel-hardware-driven-interrupt-driver.git
-RPI4KERNELDRIVER_SITE_METHOD = git
-RPI4KERNELDRIVER_GIT_SUBMODULES = YES
+# RPI4KERNELDRIVER_SITE = git@github.com:Coreyboy1820/RPI-5-Linux-Kernel-hardware-driven-interrupt-driver.git
+# RPI4KERNELDRIVER_SITE_METHOD = git
+# RPI4KERNELDRIVER_GIT_SUBMODULES = YES
 
-define RPI4KERNELDRIVER_BUILD_CMDS
-	$(MAKE) -C $(@D) CC="$(TARGET_CC)" CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)"
-endef
+RPI4KERNELDRIVER_SITE = /home/vboxuser/code/RPI-5-Linux-Kernel-hardware-driven-interrupt-driver
+RPI4KERNELDRIVER_SITE_METHOD = local
 
-# TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
-define RPI4KERNELDRIVER_INSTALL_TARGET_CMDS
+# define RPI4KERNELDRIVER_BUILD_CMDS
+# 	$(MAKE) -C $(@D) CC="$(TARGET_CC)" CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)"
+# endef
+
+# # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
+# define RPI4KERNELDRIVER_INSTALL_TARGET_CMDS
 	
-	$(INSTALL) -m 0755 $(@D)/rpi4kerneldriver $(TARGET_DIR)/usr/bin/
-endef
+# 	$(INSTALL) -m 0755 $(@D)/rpi4kerneldriver $(TARGET_DIR)/usr/bin/
+# endef
 
+$(eval $(kernel-module))
 $(eval $(generic-package))
