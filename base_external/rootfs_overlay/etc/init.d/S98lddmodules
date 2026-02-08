@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case "$1" in 
+    start)
+        echo "running init script"
+        modprobe keypadDriver
+    ;;
+    stop)
+        rmmod keypadDriver
+    ;;
+    *)
+        echo "Specify start or stop"
+        exit 1
+    ;;
+esac
